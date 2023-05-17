@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  apache:
+    build:
+      context: ./.docker/apache
+    image: php-apache-mysql-vhost-1
+    ports:
+      - 8080:80
+    volumes:
+      - ./www:/var/www/html/
+      - ./.docker/apache/demo.apache.conf:/usr/local/apache2/conf/demo.apache.conf
+    links:
+      - php-fpm
+  php-fpm:
+    build:
+      context: ./.docker/php
+    image: php-apache-mysql-vhost-2
+    volumes:
+      - ./www:/var/www/html/
+    links:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_DATABASE: ecommerce
+      DB_USERNAME: app
+      DB_PASSWORD: password
+  mysql:
+    image: mysql:5.6
+    ports:
+      - 3307:3306
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+      - ./data/my.cnf:/etc/mysql/my.cnf
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ecommerce
+      MYSQL_USER: app
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
