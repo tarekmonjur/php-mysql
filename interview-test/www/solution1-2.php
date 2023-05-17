@@ -13,32 +13,43 @@ class Category {
         $this->db = $this->dbConnection->getConnection();
     }
 
-   private function subCategories($categories, $parent, $index = 0)
+   private function subCategories($categories, $parent, $subs_total = 0)
    {
 		$subs = [];	
+		$subs_total =  0;
 		foreach($categories as $key => $category){
 			if ($category['ParentcategoryId'] === $parent['Id']) {
 				$subs[$category['SystemKey']] = $category;
-				$child = $this->subCategories($categories, $category, $index);
-				if ($child) {
-					$subs[$category['SystemKey']]['child'] = $child;
+				$subs_total = $subs_total + $category['total_items'];
+
+				$child = $this->subCategories($categories, $category, $subs_total);
+				
+				if ($child['child']) {
+					$subs[$category['SystemKey']]['TotalItems'] = $child['sub_total'];
+					$subs[$category['SystemKey']]['child'] = $child['child'];
+				} else {
+					$subs[$category['SystemKey']]['total'] = $subs_total;
 				}
+				$total = $total + $child['sub_total'];
 			}
 		}
-		return $subs;
+		
+		return ['child' => $subs, 'sub_total' => $subs_total, 'total' => $total];
    }
 
    protected function getCategoriesTree($categories, $parent = null)
    {
-	   foreach($categories as $key => $category){
+	   	foreach($categories as $key => $category){
 		   if (!$parent && !$category['ParentcategoryId'] && !$category['categoryId']){
-			   $results[$category['SystemKey']] = $category;
-			   $subs = $this->subCategories($categories, $category, 1);
-			   if ($subs) {
-				   $results[$category['SystemKey']]['child'] = $subs;
-			   }
+			   	$results[$category['SystemKey']] = $category;
+			   	$subs = $this->subCategories($categories, $category);
+			   	
+			   	if ($subs['child']) {
+					$results[$category['SystemKey']]['TotalItems'] = $subs['total'];
+				   $results[$category['SystemKey']]['child'] = $subs['child'];
+			   	}
 		   }
-	   }
+	   	}
 	   return $results;
    }
 
