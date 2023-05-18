@@ -46,7 +46,7 @@ class Category {
 			   	
 			   	if ($subs['child']) {
 					$results[$category['SystemKey']]['TotalItems'] = $subs['total'];
-				   $results[$category['SystemKey']]['child'] = $subs['child'];
+				   	$results[$category['SystemKey']]['child'] = $subs['child'];
 			   	}
 		   }
 	   	}
