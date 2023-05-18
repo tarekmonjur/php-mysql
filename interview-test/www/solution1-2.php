@@ -25,15 +25,15 @@ class Category {
 				$child = $this->subCategories($categories, $category, $subs_total);
 				
 				if ($child['child']) {
-					$subs[$category['SystemKey']]['TotalItems'] = $child['sub_total'];
+					$subs[$category['SystemKey']]['TotalItems'] = $child['sub_total'] + $category['total_items'];
 					$subs[$category['SystemKey']]['child'] = $child['child'];
 				} else {
 					$subs[$category['SystemKey']]['TotalItems'] = $category['total_items'];
 				}
-				$total = $total + $child['sub_total'];
+				$total = $total + $child['sub_total'] + $category['total_items'];
 			}
 		}
-		
+
 		return ['child' => $subs, 'sub_total' => $subs_total, 'total' => $total];
    }
 
