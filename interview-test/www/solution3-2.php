@@ -53,7 +53,8 @@ class Category {
 	   return $results;
    }
 
-	public function getCategories() {
+	public function getCategories()
+	{
 		$data = [];
 		$query = "SELECT c.*, cr.ParentcategoryId, cr.categoryId,
 			(SELECT COUNT(categoryId) FROM Item_category_relations WHERE categoryId = c.Id) total_items
@@ -61,13 +62,29 @@ class Category {
 			LEFT JOIN catetory_relations cr ON c.Id = cr.categoryId";
 		$result = $this->db->query($query);
 		if ($result) {
+			$categoryData = [];
 			while ($row = $result->fetch_assoc()) {
-				$categoryResult[$row['Id']] = $row;
+				$categoryData[$row['Id']] = $row;
 			}
-		
-			$data = $this->getCategoriesTree($categoryResult);
+			$data = $this->getCategoriesTree($categoryData);
 		}
 		return $data;
+	}
+
+	public function display($categories, $depth = 0)
+	{
+		foreach($categories as $category) {
+			if ($depth == 0) {
+				echo "<br>";
+			}
+			echo str_repeat(" - ", $depth);
+			echo $category['Name']."(".($category['TotalItems'] ?? 0).")";
+			echo "<br>";
+			if ($category['child']) {
+				$this->display($category['child'], ++$depth);
+				$depth--;
+			}
+		}
 	}
 
 	public function __destruct(){
@@ -76,9 +93,7 @@ class Category {
 }
 
 $category = new Category();
-$data = $category->getCategories();
-echo "<pre>";
-print_r($data);
-// echo json_encode($data);
+$categories = $category->getCategories();
+$category->display($categories);
 
 ?>
