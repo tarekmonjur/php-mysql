@@ -10,5 +10,5 @@ SELECT SALARY_RANGE,
 	STDDEV(DURATION) as 'Standard Deviation',
 	( SUM( DURATION * AGE ) - SUM( DURATION ) * SUM( AGE ) / 
 	COUNT( DURATION ) ) / COUNT( AGE )  as 'Covariance Duration / Age'
-FROM website_visits
+FROM user_visits
 GROUP BY SALARY_RANGE;

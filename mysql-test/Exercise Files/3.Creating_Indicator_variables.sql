@@ -7,7 +7,7 @@ SET SQL_SAFE_UPDATES = 0;
 -- ***********************************************************
 -- Create all indicator variables in one run
 -- ***********************************************************
-UPDATE website_visits
+UPDATE user_visits
 SET IS_MALE = CASE GENDER = 'Male'
 					WHEN true THEN 1
                     ELSE 0
@@ -31,4 +31,4 @@ SET IS_MALE = CASE GENDER = 'Male'
 SELECT GENDER, IS_MALE,IS_FEMALE,
 	REVIEW_DURATION, RELATED_DURATION, 
 	VIEWED_REVIEW, VIEWED_RELATED 
-FROM website_visits;
+FROM user_visits;

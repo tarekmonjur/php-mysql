@@ -8,7 +8,7 @@ SET SQL_SAFE_UPDATES = 0;
 -- Set Age range to sets of 10
 -- Set Salary range to predefined ranges
 -- ***********************************************************
-UPDATE website_visits
+UPDATE user_visits
 SET AGE_RANGE =	CONCAT( FLOOR(AGE/10) * 10, 
 					' - ', 
                     (FLOOR(AGE/10) * 10) + 10),
@@ -22,4 +22,4 @@ SET AGE_RANGE =	CONCAT( FLOOR(AGE/10) * 10,
 -- Turn off safe updates to allow for bulk changes
 -- ***********************************************************
 SELECT AGE,AGE_RANGE, SALARY, SALARY_RANGE 
-FROM website_visits;
+FROM user_visits;

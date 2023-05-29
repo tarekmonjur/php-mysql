@@ -1,10 +1,10 @@
 
 -- ***********************************************************
--- Create the website_visits table
+-- Create the user_visits table
 -- ***********************************************************
-DROP TABLE IF EXISTS `website_visits` ;
+DROP TABLE IF EXISTS `user_visits` ;
 
-CREATE TABLE `website_visits` (
+CREATE TABLE `user_visits` (
   `ID` int(11) NOT NULL,
   `CUSTOMER_NAME` varchar(255) DEFAULT NULL,
   `CUSTOMER_TYPE` int(11) DEFAULT NULL,
@@ -42,8 +42,8 @@ set autocommit = 0;
 SET GLOBAL local_infile=ON;
 
 LOAD DATA LOCAL INFILE  
-	"C:/Users/Kumaran Ponnambalam/Documents/mysql-code/code/website_visit_data.csv" 
-INTO TABLE `website_visits`  
+	"/Users/tarekahammed/Learning/php-mysql/mysql-test/Exercise Files/website_visit_data.csv" 
+INTO TABLE `user_visits`  
 	FIELDS TERMINATED BY ',' 
 	OPTIONALLY ENCLOSED BY '"'
 	LINES TERMINATED BY '\n' 
@@ -51,7 +51,7 @@ INTO TABLE `website_visits`
 	(ID, CUSTOMER_NAME , CUSTOMER_TYPE, DATE_STARTED, DURATION,
 		GENDER,AGE,SALARY,REVIEW_DURATION,RELATED_DURATION,PURCHASED );
 
-SELECT * FROM website_visits;
+SELECT * FROM user_visits;
 
 -- ***********************************************************
 -- Finally commit the transaction

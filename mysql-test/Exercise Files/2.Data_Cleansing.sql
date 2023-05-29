@@ -10,9 +10,9 @@ SET SQL_SAFE_UPDATES = 0;
 -- ***********************************************************
 
 SELECT CUSTOMER_NAME, DURATION 
-FROM website_visits;
+FROM user_visits;
 
-UPDATE website_visits
+UPDATE user_visits
 SET CUSTOMER_NAME=
 	(CASE INSTR(CUSTOMER_NAME,',') > 0 -- check if name has comma
 		WHEN true THEN 
@@ -27,4 +27,4 @@ SET CUSTOMER_NAME=
 	DURATION = ROUND(DURATION,0); -- round off duration.
 	
 SELECT CUSTOMER_NAME, DURATION 
-FROM website_visits;
+FROM user_visits;

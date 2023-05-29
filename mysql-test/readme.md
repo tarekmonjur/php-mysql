@@ -11,9 +11,16 @@ docker build -t tarekmonjur/mysql .
 ```
 docker run -it --name mysql-test --rm tarekmonjur/mysql
 ```
-#### Using Port
+### Using Port
 ```
 docker run -it --name mysql-test -p 3307:3306 --rm tarekmonjur/mysql
 ```
 
 #### Use ctr+\ for exit when use **-it** for ctr+c or ctr+p to exit use **-t -i**
+
+<br/>
+
+### Using Volume
+```
+docker run -it --name mysql-test -v $(pwd)/data:/var/lib/mysql -p 3307:3306 --rm tarekmonjur/mysql
+```

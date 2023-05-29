@@ -29,7 +29,7 @@ SELECT @row_num := @row_num + 1 ,
 	CASE WHEN @row_num = @50_per THEN @50_val := DURATION ELSE 1 end,
 	CASE WHEN @row_num = @75_per THEN @75_val := DURATION ELSE 1 end,
 	DURATION 
-FROM website_visits 
+FROM user_visits 
 ORDER BY DURATION LIMIT 125 ;
 
 -- print out the results

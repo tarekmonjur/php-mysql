@@ -13,11 +13,11 @@ FROM
 	  FROM
 		(SELECT DATE_STARTED AS TS, 
 			1 AS INCREMENT , ID
-        FROM website_visits
+        FROM user_visits
 		UNION
 		SELECT DATE_ADD(DATE_STARTED, INTERVAL DURATION SECOND ) AS TS ,
 			-1 AS INCREMENT , ID
-        FROM website_visits
+        FROM user_visits
 		ORDER BY 1) 
         AS t1) 
     AS t2
