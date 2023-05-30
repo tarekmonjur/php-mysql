@@ -66,6 +66,11 @@ class Queue {
         }
         return null;
     }
+
+    public function size()
+    {
+        return $this->rear - $this->front;
+    }
 }
 
 $queue = new Queue();
@@ -80,4 +85,6 @@ var_dump($queue->isEmpty());
 echo $queue->getFirst();
 echo "\n";
 echo $queue->getLast();
+echo "\n";
+echo $queue->size();
 echo "\n";
