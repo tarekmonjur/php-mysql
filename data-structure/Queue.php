@@ -73,6 +73,7 @@ class Queue {
     }
 }
 
+echo "\n***Queue***\n";
 $queue = new Queue();
 $queue->enqueue('tarek');
 $queue->enqueue('monjur');
@@ -90,7 +91,7 @@ echo $queue->size();
 echo "\n";
 
 
-echo "Ds Queue \n";
+echo "\n***Ds Queue***\n";
 $q = new \Ds\Queue();
 
 $q->push("a");
