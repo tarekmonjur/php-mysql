@@ -88,3 +88,20 @@ echo $queue->getLast();
 echo "\n";
 echo $queue->size();
 echo "\n";
+
+
+echo "Ds Queue \n";
+$q = new \Ds\Queue();
+
+$q->push("a");
+$q->push("b");
+$q->push("c", "d");
+$q->push(...["e", "f"]);
+
+print_r($q);
+var_dump($q->pop());
+var_dump($q->peek());
+print_r($q->toArray());
+var_dump($q->isEmpty());
+var_dump($q->count());
+var_dump($q->capacity());
