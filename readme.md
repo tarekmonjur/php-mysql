@@ -9,6 +9,7 @@ Some problem soluation of the PHP and Mysql.
 * **Stack**
 * **Tree**
 * **Binary Tree**
+* **Graph**
 
 <br/>
 
