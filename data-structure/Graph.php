@@ -16,10 +16,14 @@ class Graph {
         }
     }
 
-    public function addEdge($from, $to)
+    public function addEdge($from, $to, $value = null)
     {
         if (!in_array($to, $this->adjacency[$from])) {
-            $this->adjacency[$from][] = $to;
+            if ($value) {
+                $this->adjacency[$from][$to] = $value;
+            } else {
+                $this->adjacency[$from][] = $to;
+            }
         }
     }
 
@@ -27,8 +31,12 @@ class Graph {
     {
         foreach($this->adjacency as $key => $adjacency) {
             echo $key. " => ";
-            foreach($adjacency as $value) {
-                echo $value. ", ";
+            foreach($adjacency as $key => $value) {
+                if ((int)$value > 0) {
+                    echo $key."->".$value. ", ";
+                } else {
+                    echo $value. ", ";
+                }
             }
             echo "\n";
         }
@@ -68,6 +76,11 @@ class Graph {
         echo "Edge not found on Graph \n";
         return [];
     }
+
+    public function shortestPath()
+    {
+
+    }
 }
 
 $graph = new Graph(['A', 'B', 'C', 'D', 'E']);
@@ -88,8 +101,7 @@ $graph->traverseByBFS('A', 'D');
 $graph->traverseByBFS('B', 'C');
 $path = $graph->traverseByBFS('D', 'C');
 
-echo "\n";
-echo "\n";
+echo "\n \n";
 
 $graph = new Graph(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'J', 'K']);
 // directed graph
@@ -112,3 +124,31 @@ $graph->addEdge('K', 'E');
 $graph->addEdge('K', 'G');
 $graph->displayGraph();
 $graph->traverseByBFS('A', 'J');
+
+echo "\n \n";
+
+$graph = new Graph(['A', 'B', 'C', 'D', 'E', 'F']);
+// directed graph
+$graph->addEdge('A', 'B', 3);
+$graph->addEdge('A', 'D', 3);
+$graph->addEdge('A', 'F', 6);
+$graph->addEdge('B', 'A', 3);
+$graph->addEdge('B', 'D', 1);
+$graph->addEdge('B', 'E', 3);
+$graph->addEdge('C', 'E', 2);
+$graph->addEdge('C', 'F', 3);
+$graph->addEdge('D', 'A', 3);
+$graph->addEdge('D', 'B', 1);
+$graph->addEdge('D', 'E', 1);
+$graph->addEdge('D', 'F', 2);
+$graph->addEdge('E', 'B', 3);
+$graph->addEdge('E', 'C', 2);
+$graph->addEdge('E', 'D', 1);
+$graph->addEdge('E', 'F', 5);
+$graph->addEdge('F', 'A', 6);
+$graph->addEdge('F', 'C', 3);
+$graph->addEdge('F', 'D', 2);
+$graph->addEdge('F', 'E', 5);
+$graph->displayGraph();
+// print_r($graph);
+// $graph->traverseByBFS('A', 'J');
