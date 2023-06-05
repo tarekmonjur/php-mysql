@@ -42,3 +42,4 @@ function bubbleSort2(...$list)
 }
 
 bubbleSort2(4,2,6,9,3,1,5);
+bubbleSort2(6,20,8,19,56,23,87,41,49,53);

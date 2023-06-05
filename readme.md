@@ -1,5 +1,6 @@
 # PHP - MySql
-Some problem soluation of the PHP and Mysql.
+Important and most usefull data structure with php. then given example of the most common algorithms.
+Some advance myslq query techinc then given a real life example.
 
 </br>
 
@@ -10,6 +11,14 @@ Some problem soluation of the PHP and Mysql.
 * **Tree**
 * **Binary Tree**
 * **Graph**
+
+<br/>
+
+## Algorithms:
+* **Power**
+* **Factorial**
+* **Bubble Sort**
+* **Merge Sort**
 
 <br/>
 
