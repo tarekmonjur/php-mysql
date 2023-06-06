@@ -1,6 +1,5 @@
-# PHP - MySql
-Important and most usefull data structure with php. then given example of the most common algorithms.
-Some advance myslq query techinc then given a real life example.
+# DataStructre and Algorithm using PHP
+Important and most usefull data structure and algorithms with php. then given example of the most common algorithms.
 
 </br>
 
@@ -32,6 +31,11 @@ Some advance myslq query techinc then given a real life example.
 
 <br/>
 
+# PHP & MySql
+### Real life usecase example of php & mysql
+
+</br>
+
 ## Multiple category menu
 * **Multiple nested category and sub-category with item counts.**
 * **Using OOP Structure**
@@ -39,7 +43,12 @@ Some advance myslq query techinc then given a real life example.
 
 <br/>
 
-## MySql advance technic
+# MySql Topic
+### Some advance myslq query technic then given a real life example.
+
+</br>
+
+## Advance Technic
 * **Insert Bulk Data**
 * **Data Cleansing**
 * **Indicator Variable**
