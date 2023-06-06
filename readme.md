@@ -1,8 +1,8 @@
-# Data Structre and Algorithm using PHP & Mysql
-Important and most usefull data structure and algorithms with php. then given example of the most common algorithms.
+# Data Structures and Algorithms using PHP & Mysql
+Important and most usefull data structures and algorithms with php. then given example of the most common algorithms.
 </br>
 
-## Data Structure:
+## Data Structures:
 * **Linked List**
 * **Queue**
 * **Stack**
@@ -30,7 +30,7 @@ Important and most usefull data structure and algorithms with php. then given ex
 <br/>
 
 ## PHP & MySql
-Real life usecase example of php & mysql
+Real life use case example of php & mysql
 </br>
 
 ### Multiple category menu:
