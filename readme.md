@@ -15,10 +15,20 @@ Some advance myslq query techinc then given a real life example.
 <br/>
 
 ## Algorithms:
+### Recursion:
 * **Power**
 * **Factorial**
+### Sorting Algorithms:
 * **Bubble Sort**
 * **Merge Sort**
+* **Quick Sort**
+* **Quick Sort**
+### Searching Algorithms:
+* **Linear Search**
+### Traversing Algorithms:
+* **Breadth First Search**
+* **Depth First Search**
+* **Shortest Path**
 
 <br/>
 
