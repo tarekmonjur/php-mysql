@@ -1,6 +1,5 @@
-# DataStructre and Algorithm using PHP
+# Data Structre and Algorithm using PHP
 Important and most usefull data structure and algorithms with php. then given example of the most common algorithms.
-
 </br>
 
 ## Data Structure:
@@ -10,7 +9,6 @@ Important and most usefull data structure and algorithms with php. then given ex
 * **Tree**
 * **Binary Tree**
 * **Graph**
-
 <br/>
 
 ## Algorithms:
@@ -32,11 +30,10 @@ Important and most usefull data structure and algorithms with php. then given ex
 <br/>
 
 # PHP & MySql
-### Real life usecase example of php & mysql
-
+Real life usecase example of php & mysql
 </br>
 
-## Multiple category menu
+### Multiple category menu:
 * **Multiple nested category and sub-category with item counts.**
 * **Using OOP Structure**
 * **Using Docker**
@@ -45,10 +42,9 @@ Important and most usefull data structure and algorithms with php. then given ex
 
 # MySql Topic
 ### Some advance myslq query technic then given a real life example.
-
 </br>
 
-## Advance Technic
+## Advance Technic:
 * **Insert Bulk Data**
 * **Data Cleansing**
 * **Indicator Variable**
