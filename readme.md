@@ -22,6 +22,7 @@ Important and most usefull data structures and algorithms with php. then given e
 * **Quick Sort**
 ### Searching Algorithms:
 * **Linear Search**
+* **Binary Search**
 ### Traversing Algorithms:
 * **Breadth First Search**
 * **Depth First Search**
