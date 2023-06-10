@@ -19,7 +19,7 @@ Important and most usefull data structures and algorithms with php. then given e
 * **Bubble Sort**
 * **Merge Sort**
 * **Quick Sort**
-* **Quick Sort**
+
 ### Searching Algorithms:
 * **Linear Search**
 * **Binary Search**
